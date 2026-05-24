@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 import { FaShoppingBag, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 

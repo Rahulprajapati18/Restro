@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import axios from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 import { FaPlus, FaMinus, FaTrash, FaShoppingCart, FaCheckCircle, FaSearch, FaFire } from 'react-icons/fa';
 import UPIPayment from '../components/UPIPayment';

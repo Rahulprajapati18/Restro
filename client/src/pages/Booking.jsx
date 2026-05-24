@@ -1,6 +1,6 @@
 import { useState, useContext, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import axios from '../api/axiosConfig';
 import { AuthContext } from '../context/AuthContext';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
