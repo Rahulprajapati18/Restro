@@ -25,7 +25,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/orders',   orderRoutes);
 app.use('/api/feedback', feedbackRoutes);
 
-app.get('/', (_req, res) =>
+app.get('/api/menu', (_req, res) =>
   res.json({ message: 'Welcome to Samridhii Restaurant API [Supabase]' })
 );
 

@@ -326,23 +326,24 @@ const Home = () => {
       <section className="py-20 bg-black relative overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          {[...Array(10)].map((_, i) => (
+          {[
+            { left: '5%',  top: '10%', dur: 3.2, delay: 0.0 },
+            { left: '20%', top: '70%', dur: 4.1, delay: 0.3 },
+            { left: '40%', top: '30%', dur: 3.8, delay: 0.7 },
+            { left: '60%', top: '80%', dur: 4.5, delay: 1.1 },
+            { left: '75%', top: '15%', dur: 3.5, delay: 0.5 },
+            { left: '85%', top: '55%', dur: 4.2, delay: 1.4 },
+            { left: '15%', top: '45%', dur: 3.9, delay: 0.2 },
+            { left: '50%', top: '60%', dur: 4.0, delay: 0.9 },
+            { left: '30%', top: '85%', dur: 3.3, delay: 1.6 },
+            { left: '90%', top: '35%', dur: 4.8, delay: 0.4 },
+          ].map((orb, i) => (
             <motion.div
               key={i}
               className="absolute w-64 h-64 border border-gold-400 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
+              style={{ left: orb.left, top: orb.top }}
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: orb.dur, repeat: Infinity, delay: orb.delay }}
             />
           ))}
         </div>

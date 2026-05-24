@@ -280,7 +280,7 @@ const Dashboard = () => {
                 >
                   {users.map((u, i) => (
                     <motion.div
-                      key={u._id}
+                      key={u.id || u._id}
                       variants={itemVariants}
                       whileHover={{ scale: 1.01, x: 4 }}
                       className="bg-black/50 p-5 rounded-xl border border-gold-600/20 flex items-center gap-4"
@@ -376,7 +376,7 @@ const Dashboard = () => {
                           <FaStar key={s} className={s <= fb.rating ? 'text-gold-400' : 'text-gray-700'} />
                         ))}
                         <span className="ml-auto text-gray-500 text-xs">
-                          {new Date(fb.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          {new Date(fb.created_at || fb.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                         </span>
                       </div>
 
