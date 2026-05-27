@@ -25,14 +25,17 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/orders',   orderRoutes);
 app.use('/api/feedback', feedbackRoutes);
 
-app.get('/api/menu', (_req, res) =>
-  res.json({ message: 'Welcome to Samridhii Restaurant API [Supabase]' })
+app.get('/', (_req, res) =>
+  res.json({ message: 'Samridhii API is running ✅' })
 );
 
 app.use((_req, res) => res.status(404).json({ message: 'Route not found' }));
 app.use((err, _req, res, _next) => res.status(500).json({ message: err.message }));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT} [Supabase backend]`));
+// Only listen when running locally, not on Vercel
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT} [Supabase backend]`));
+}
 
 export default app;
