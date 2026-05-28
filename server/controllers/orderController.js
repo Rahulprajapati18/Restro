@@ -59,9 +59,9 @@ export const getAllOrders = async (req, res) => {
   try {
     const sb = supabaseAdmin();
     const { data, error } = await sb.from('orders')
-      .select('*, profiles(name, email)').order('created_at', { ascending: false });
+      .select('*').order('created_at', { ascending: false });
     if (error) return res.status(500).json({ message: error.message });
-    res.json(data.map(row => ({ ...mapOrder(row), user: row.profiles })));
+    res.json(data.map(mapOrder));
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
